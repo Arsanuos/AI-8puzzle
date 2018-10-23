@@ -1,24 +1,22 @@
 class state:
 
-
     def __init__(self, current, parent, heuristic, move_cost=1):
         self.__current = current
         self.__parent = parent
-        if parent == None:
+        if parent is None:
             self.__cost = 0
         else:
             self.__cost = parent.cost + move_cost
         self.__heuristic = heuristic(current)
         self.__move_cost = move_cost
-    
- 
+
     @property
     def current(self):
-       return self.__current
+        return self.__current
 
     @property
     def parent(self):
-       return self.__parent
+        return self.__parent
 
     @property
     def cost(self):
@@ -39,4 +37,3 @@ class state:
     @current.setter
     def current(self, current):
         self.__current = current
-    

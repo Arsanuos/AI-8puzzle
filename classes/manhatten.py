@@ -1,4 +1,4 @@
-from heuristic import Heuristic
+from classes.heuristic import Heuristic
 
 
 class Manhatten(Heuristic):

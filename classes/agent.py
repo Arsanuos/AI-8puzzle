@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from copy import copy
 
+
 class Agent(ABC):
 
     def __init__(self):
@@ -17,6 +18,6 @@ class Agent(ABC):
                 new_arr = copy(current_state.current)
                 old_place, new_place = new_place, old_place
                 new_arr[(empty_index[0] * 3 + empty_index[1])], \
-                new_arr[ (empty_index[0] + x) * 3 + (empty_index[1] + y) ] = \
-                new_arr[ (empty_index[0] + x) * 3 + (empty_index[1] + y) ], \
+                new_arr[(empty_index[0] + x) * 3 + (empty_index[1] + y)] = \
+                new_arr[(empty_index[0] + x) * 3 + (empty_index[1] + y)], \
                 new_arr[(empty_index[0] * 3 + empty_index[1])]
