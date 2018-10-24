@@ -13,7 +13,7 @@ class Agent(ABC):
         child_states = []
 
         current_arr = current_state.current
-        empty_index = (current_arr.index(0)/3, current_arr.index(0)%3)
+        empty_index = (current_arr.index(0)//3, current_arr.index(0)%3)
 
         dx = [1, -1, 0, 0]
         dy = [0, 0, 1, -1]
@@ -28,6 +28,13 @@ class Agent(ABC):
                     child_states.append(child_state)
 
         return child_states
+
+    def get_steps(self, final_state):
+        steps = []
+        while final_state is not None:
+            steps.append(deepcopy(final_state))
+            final_state = final_state.parent
+        return steps
 
     @property
     def vis(self):

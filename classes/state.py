@@ -43,7 +43,7 @@ class State:
         self.__current = current
 
     def __hash__(self):
-        return hash(set(self.__current))
+        return hash(str(self.__current))
 
     def __eq__(self, other):
         if not isinstance(other, type(self)): return NotImplemented
