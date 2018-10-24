@@ -1,5 +1,5 @@
-class State:
 
+class State:
     # parent is also a state not array
     def __init__(self, current, parent, heuristic=None, move_cost=1):
         self.__current = current
@@ -11,7 +11,8 @@ class State:
         if heuristic is None:
             self.__heuristic = 0
         else:
-            self.__heuristic = heuristic(current)
+            tmpHeurisitc = heuristic()
+            self.__heuristic = tmpHeurisitc.get_heuristic(self)
         self.__move_cost = move_cost
 
     @property
@@ -43,7 +44,7 @@ class State:
         self.__current = current
 
     def __hash__(self):
-        return hash(set(self.__current))
+        return hash(str(self.__current))
 
     def __eq__(self, other):
         if not isinstance(other, type(self)): return NotImplemented
@@ -51,3 +52,7 @@ class State:
 
     def is_goal(self):
         return self.current == [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+    def __lt__(self, other):
+        return self.cost < other.cost
+

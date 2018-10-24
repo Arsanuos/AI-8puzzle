@@ -21,7 +21,7 @@ class Agent(ABC):
             if 0 <= (empty_index[0] + x) <= 2 and 0 <= (empty_index[1] + y) <= 2:
                 new_arr = deepcopy(current_state.current)
                 old_index = new_arr.index(0)
-                new_index = (empty_index[0] + x) * 3 + (empty_index[1] + y)
+                new_index = int((empty_index[0] + x) * 3 + (empty_index[1] + y))
                 new_arr[old_index], new_arr[new_index] = new_arr[new_index], new_arr[old_index]
                 child_state = State(new_arr, current_state, heuristic)
                 if child_state not in self.vis:
@@ -36,4 +36,14 @@ class Agent(ABC):
     @abstractmethod
     def search(self, initial_state):
         pass
+
+    def get_path(self, end_state):
+        if end_state is None:
+            return None
+        stack = []
+        while end_state.parent is not None:
+            stack.append(end_state.parent)
+            end_state = end_state.parent
+        return stack
+
 
