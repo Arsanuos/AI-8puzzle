@@ -6,7 +6,7 @@ from state import State
 class Agent(ABC):
 
     def __init__(self):
-        # vis is set of arrays not states
+        # vis is set of states not arrays
         self.__vis = set()
 
     def expand(self, current_state, heuristic=None):
@@ -23,8 +23,9 @@ class Agent(ABC):
                 old_index = new_arr.index(0)
                 new_index = (empty_index[0] + x) * 3 + (empty_index[1] + y)
                 new_arr[old_index], new_arr[new_index] = new_arr[new_index], new_arr[old_index]
-                if new_arr not in self.vis:
-                    child_states.append(State(new_arr, current_state, heuristic))
+                child_state = State(new_arr, current_state, heuristic)
+                if child_state not in self.vis:
+                    child_states.append(child_state)
 
         return child_states
 
