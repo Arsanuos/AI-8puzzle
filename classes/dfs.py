@@ -1,11 +1,13 @@
 from agent import Agent
+from state import State
 
 
 class DFS(Agent):
 
     def search(self, initial_state):
 
-        frontier = [initial_state]
+        start = State(initial_state, None)
+        frontier = [start]
         final_state = None
         while frontier:
             state = frontier.pop()
