@@ -1,13 +1,17 @@
-class state:
+class State:
 
-    def __init__(self, current, parent, heuristic, move_cost=1):
+    # parent is also a state not array
+    def __init__(self, current, parent, heuristic=None, move_cost=1):
         self.__current = current
         self.__parent = parent
         if parent is None:
             self.__cost = 0
         else:
             self.__cost = parent.cost + move_cost
-        self.__heuristic = heuristic(current)
+        if heuristic is None:
+            self.__heuristic = 0
+        else:
+            self.__heuristic = heuristic(current)
         self.__move_cost = move_cost
 
     @property
