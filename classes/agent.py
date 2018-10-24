@@ -13,7 +13,7 @@ class Agent(ABC):
         child_states = []
 
         current_arr = current_state.current
-        empty_index = (current_arr.index(0)//3, current_arr.index(0)%3)
+        empty_index = (current_arr.index(0) // 3, current_arr.index(0) % 3)
 
         dx = [1, -1, 0, 0]
         dy = [0, 0, 1, -1]

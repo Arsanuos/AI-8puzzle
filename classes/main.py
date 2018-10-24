@@ -14,5 +14,3 @@ print_steps(steps)
 agent = BFS()
 steps = agent.search([1, 2, 0, 3, 4, 5, 6, 7, 8])
 print_steps(steps)
-
-
