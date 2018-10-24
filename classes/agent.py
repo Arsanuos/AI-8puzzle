@@ -7,6 +7,10 @@ class Agent(ABC):
     def __init__(self):
         self.__vis = set()
 
+    @abstractmethod
+    def search(self):
+        pass
+
     def expand(self, current_state, heuristic=None):
         child_states = []
 
