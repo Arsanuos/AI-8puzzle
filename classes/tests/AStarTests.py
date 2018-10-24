@@ -12,7 +12,6 @@ class TestAStar(unittest.TestCase):
 
 
     def test2(self):
-        return
         agent = AStar([1,2,5,3,4,0,6,7,8], Euclidean)
         print(agent.search())
 

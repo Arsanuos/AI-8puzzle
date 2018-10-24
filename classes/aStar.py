@@ -13,15 +13,14 @@ class AStar(Agent):
         super().__init__()
 
     def search(self):
-        print(self.vis)
         states_heap = []
         heappush(states_heap, self.__initial_state)
         end = None
         while len(states_heap):
             # break tie by FIFO criteria
             current_explored_state = heappop(states_heap)
-            self.print_util(current_explored_state.current)
             if current_explored_state.is_goal():
+                print(current_explored_state.current)
                 end = current_explored_state
                 break
 
@@ -30,10 +29,15 @@ class AStar(Agent):
                 child_states = self.expand(current_explored_state)
                 for child in child_states:
                     heappush(states_heap, child)
+
+        self.print_util(self.get_path(end))
         return self.get_path(end)
 
 
-    def print_util(self, arr):
+    def print_util(self, states):
+        print(len(states))
         print("================================")
-        for i in range(0, 9, 3):
-            print(arr[i:i + 3])
+        for state in states:
+            for i in range(0, 9, 3):
+                print(state.current[i:i + 3])
+            print("================================")

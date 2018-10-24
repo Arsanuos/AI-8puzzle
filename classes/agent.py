@@ -13,7 +13,7 @@ class Agent(ABC):
         child_states = []
 
         current_arr = current_state.current
-        empty_index = (current_arr.index(0)/3, current_arr.index(0)%3)
+        empty_index = (int(current_arr.index(0)/3), current_arr.index(0)%3)
 
         dx = [1, -1, 0, 0]
         dy = [0, 0, 1, -1]
@@ -21,7 +21,7 @@ class Agent(ABC):
             if 0 <= (empty_index[0] + x) <= 2 and 0 <= (empty_index[1] + y) <= 2:
                 new_arr = deepcopy(current_state.current)
                 old_index = new_arr.index(0)
-                new_index = int((empty_index[0] + x) * 3 + (empty_index[1] + y))
+                new_index = (empty_index[0] + x) * 3 + (empty_index[1] + y)
                 new_arr[old_index], new_arr[new_index] = new_arr[new_index], new_arr[old_index]
                 child_state = State(new_arr, current_state, heuristic)
                 if child_state not in self.vis:
@@ -41,6 +41,7 @@ class Agent(ABC):
         if end_state is None:
             return None
         stack = []
+        stack.append(end_state)
         while end_state.parent is not None:
             stack.append(end_state.parent)
             end_state = end_state.parent
