@@ -1,4 +1,4 @@
-class state:
+class State:
 
     def __init__(self, current, parent, heuristic, move_cost=1):
         self.__current = current
