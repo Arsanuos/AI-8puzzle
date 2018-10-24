@@ -29,6 +29,14 @@ class Agent(ABC):
 
         return child_states
 
+    def get_steps(self, final_state):
+        steps = []
+        while final_state is not None:
+            steps.append(deepcopy(final_state))
+            final_state = final_state.parent
+        return steps
+
+
     @property
     def vis(self):
         return self.__vis
