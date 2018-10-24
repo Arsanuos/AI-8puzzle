@@ -1,5 +1,9 @@
 from agent import Agent
 from state import State
+from manhatten import Manhatten
+from euclidean import Euclidean
+from agent import Agent
+from state import State
 from heapq import heappush, nsmallest
 
 class AStar(Agent):
