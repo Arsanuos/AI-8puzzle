@@ -1,13 +1,17 @@
 class State:
 
-    def __init__(self, current, parent, heuristic, move_cost=1):
+    # parent is also a state not array
+    def __init__(self, current, parent, heuristic=None, move_cost=1):
         self.__current = current
         self.__parent = parent
         if parent is None:
             self.__cost = 0
         else:
             self.__cost = parent.cost + move_cost
-        self.__heuristic = heuristic(current)
+        if heuristic is None:
+            self.__heuristic = 0
+        else:
+            self.__heuristic = heuristic(current)
         self.__move_cost = move_cost
 
     @property
@@ -37,3 +41,10 @@ class State:
     @current.setter
     def current(self, current):
         self.__current = current
+
+    def __hash__(self):
+        return hash((self.__cost, self.__heuristic, id(self), ))
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)): return NotImplemented
+        return self.current == other.current

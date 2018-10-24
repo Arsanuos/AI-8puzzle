@@ -1,4 +1,4 @@
-from classes.heuristic import Heuristic
+from heuristic import Heuristic
 
 
 class Euclidean(Heuristic):
