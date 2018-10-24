@@ -34,13 +34,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="1971" />
+          <entry key="py" value="2063" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="1971" />
+          <entry key="Python" value="2063" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -116,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="780">
+              <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -125,12 +125,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AStar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1540400898454" expanded="true" signature="140:141" ph="..." />
-                <marker date="1540400898454" expanded="true" signature="140:146" ph="..." />
+                <element signature="e#1#24#0" expanded="true" />
+                <marker date="1540403227090" expanded="true" signature="106:107" ph="..." />
+                <marker date="1540403227090" expanded="true" signature="106:112" ph="..." />
               </folding>
             </state>
           </provider>
@@ -285,18 +285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AStar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1540400898454" expanded="true" signature="140:141" ph="..." />
-            <marker date="1540400898454" expanded="true" signature="140:146" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/agent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -308,10 +296,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AStar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#1#24#0" expanded="true" />
+            <marker date="1540403227090" expanded="true" signature="106:107" ph="..." />
+            <marker date="1540403227090" expanded="true" signature="106:112" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="780">
+          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
         </state>
       </provider>
     </entry>

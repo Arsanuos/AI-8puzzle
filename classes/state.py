@@ -48,3 +48,6 @@ class State:
     def __eq__(self, other):
         if not isinstance(other, type(self)): return NotImplemented
         return self.current == other.current
+
+    def is_goal(self):
+        return self.current == [0, 1, 2, 3, 4, 5, 6, 7, 8]
