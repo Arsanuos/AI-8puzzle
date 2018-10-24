@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0afd3a43-af6c-4343-b860-9ca0ceec6e0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AStar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/classes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/classes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AStar.py" beforeDir="false" afterPath="$PROJECT_DIR$/AStar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,13 +34,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="1844" />
+          <entry key="py" value="1971" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="1844" />
+          <entry key="Python" value="1971" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -120,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+            <state relative-caret-position="675">
+              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -129,12 +125,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AStar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state relative-caret-position="210">
+              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="50" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1540398804415" expanded="true" signature="140:141" ph="..." />
-                <marker date="1540398804415" expanded="true" signature="140:146" ph="..." />
+                <marker date="1540400898454" expanded="true" signature="140:141" ph="..." />
+                <marker date="1540400898454" expanded="true" signature="140:146" ph="..." />
               </folding>
             </state>
           </provider>
@@ -245,7 +241,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32850242" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -268,6 +264,13 @@
     <entry file="file://$PROJECT_DIR$/heuristic.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1247971764/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="5778" selection-start-line="5778" selection-end-line="5778" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/euclidean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -282,6 +285,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AStar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1540400898454" expanded="true" signature="140:141" ph="..." />
+            <marker date="1540400898454" expanded="true" signature="140:146" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/agent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -293,29 +308,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AStar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1540398804415" expanded="true" signature="140:141" ph="..." />
-            <marker date="1540398804415" expanded="true" signature="140:146" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1247971764/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="5778" selection-start-line="5778" selection-end-line="5778" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        <state relative-caret-position="675">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
         </state>
       </provider>
     </entry>
