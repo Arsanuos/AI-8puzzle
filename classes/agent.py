@@ -9,6 +9,10 @@ class Agent(ABC):
         # vis is set of states not arrays
         self.__vis = set()
 
+    @abstractmethod
+    def search(self):
+        pass
+
     def expand(self, current_state, heuristic=None):
         child_states = []
 
