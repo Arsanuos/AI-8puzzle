@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from copy import copy
-from state import State
+from classes.state import State
 
 class Agent(ABC):
 

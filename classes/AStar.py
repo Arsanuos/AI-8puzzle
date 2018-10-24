@@ -1,7 +1,7 @@
-import manhatten
-import euclidean
-from agent import Agent
-from state import State
+from classes.manhatten import Manhatten
+from classes.euclidean import Euclidean
+from classes.agent import Agent
+from classes.state import State
 from heapq import heappush, nsmallest
 
 class AStar(Agent):
