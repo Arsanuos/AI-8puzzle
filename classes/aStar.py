@@ -8,11 +8,12 @@ from heapq import heappush, heappop, nsmallest
 
 class AStar(Agent):
 
-    def __init__(self, initial_arr, heuristic):
-        self.__initial_state = State(initial_arr, None, heuristic)
+    def __init__(self, heuristic):
+        self.__heuristic = heuristic
         super().__init__()
 
-    def search(self):
+    def search(self, initial_arr):
+        self.__initial_state = State(initial_arr, None, self.__heuristic)
         states_heap = []
         heappush(states_heap, self.__initial_state)
         end = None
@@ -20,7 +21,6 @@ class AStar(Agent):
             # break tie by FIFO criteria
             current_explored_state = heappop(states_heap)
             if current_explored_state.is_goal():
-                print(current_explored_state.current)
                 end = current_explored_state
                 break
 
@@ -30,8 +30,7 @@ class AStar(Agent):
                 for child in child_states:
                     heappush(states_heap, child)
 
-        self.print_util(self.get_path(end))
-        return self.get_path(end)
+        return self.get_steps(end)
 
 
     def print_util(self, states):

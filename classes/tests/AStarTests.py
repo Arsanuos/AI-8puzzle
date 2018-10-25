@@ -7,13 +7,13 @@ class TestAStar(unittest.TestCase):
 
 
     def test1(self):
-        agent = AStar([1,2,5,3,4,0,6,7,8], Manhatten)
-        print(agent.search())
+        agent = AStar(Manhatten)
+        print(agent.search([1,2,5,3,4,0,6,7,8]))
 
 
     def test2(self):
-        agent = AStar([1,2,5,3,4,0,6,7,8], Euclidean)
-        print(agent.search())
+        agent = AStar(Euclidean)
+        print(agent.search([1,2,5,3,4,0,6,7,8]))
 
 
 

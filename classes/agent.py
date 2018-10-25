@@ -44,9 +44,9 @@ class Agent(ABC):
         """
         steps = []
         while final_state is not None:
-            steps.append(deepcopy(final_state))
+            steps.append(deepcopy(final_state.current))
             final_state = final_state.parent
-        return steps
+        return steps[::-1]
 
     @property
     def vis(self):
@@ -69,10 +69,10 @@ class Agent(ABC):
         if end_state is None:
             return None
         stack = []
-        stack.append(end_state)
+        stack.append(end_state.current)
         while end_state.parent is not None:
-            stack.append(end_state.parent)
+            stack.append(end_state.parent.current)
             end_state = end_state.parent
-        return stack
+        return stack[::-1]
 
 
