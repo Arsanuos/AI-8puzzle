@@ -10,6 +10,13 @@ class Agent(ABC):
         self.__vis = set()
 
     def expand(self, current_state, heuristic=None):
+        """
+            Get the child states of the current state.
+        :param current_state: the current that we want to get its children, which is object of State class.
+        :param heuristic: Used in cas of A* algorithm to get the heuristic cost of the child state.
+        :return: list of States which is not visited yet by the search algorithm.
+        """
+
         child_states = []
 
         current_arr = current_state.current
@@ -30,6 +37,11 @@ class Agent(ABC):
         return child_states
 
     def get_steps(self, final_state):
+        """
+            Get the path from that final state to the first given state by the user.
+        :param final_state: final state reached, aka goal state.
+        :return: list of State objects of the path, in reversed order, first of the list is the last state and so on.
+        """
         steps = []
         while final_state is not None:
             steps.append(deepcopy(final_state))
@@ -38,9 +50,18 @@ class Agent(ABC):
 
     @property
     def vis(self):
+        """
+            Getter for the visited set.
+        :return: set of State object.
+        """
         return self.__vis
 
     @abstractmethod
     def search(self, initial_state):
+        """
+            Abstract method for search, will be used in BFS, DFS, and A* algorithms.
+        :param initial_state: initial state of the puzzle given by the user.
+        :return: list of state that describe the path.
+        """
         pass
 

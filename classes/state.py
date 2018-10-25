@@ -2,6 +2,13 @@ class State:
 
     # parent is also a state not array
     def __init__(self, current, parent, heuristic=None, move_cost=1):
+        """
+            State object that contains the current configuration of the game state.
+        :param current: the current shape of the 8-puzzle game.
+        :param parent: the previous state of the 8-puzzle game.
+        :param heuristic: Heuristic cost Object to calculate heuristic cost in case of using A* Algorithm.
+        :param move_cost: the step cost which is the payload that was taken to move from parent game state to current game state.
+        """
         self.__current = current
         self.__parent = parent
         if parent is None:
@@ -50,4 +57,8 @@ class State:
         return self.current == other.current
 
     def is_goal(self):
+        """
+            Checks if we the current game state is the final state.
+        :return: True if we reached the final state; False otherwise.
+        """
         return self.current == [0, 1, 2, 3, 4, 5, 6, 7, 8]
