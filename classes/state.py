@@ -1,6 +1,5 @@
 
 class State:
-    # parent is also a state not array
     def __init__(self, current, parent, heuristic=None, move_cost=1):
         """
             State object that contains the current configuration of the game state.
@@ -66,4 +65,3 @@ class State:
 
     def __lt__(self, other):
         return self.cost < other.cost
-
