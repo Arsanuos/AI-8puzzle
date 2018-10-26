@@ -4,12 +4,15 @@ from dfs import DFS
 from manhatten import Manhatten
 from euclidean import Euclidean
 from aStar import AStar
-import json
-app = Flask(__name__)
 
+
+app = Flask(__name__)
 
 @app.route('/solve', methods=['GET'])
 def solve():
+    """
+        Solve the puzzle by getting the required parameters from the request args.
+    """
     algorithm = request.args['algorithm']
     arr = list(map(int, request.args['input[]'][1:-1].split(',')))
     if algorithm == "BFS":

@@ -1,9 +1,5 @@
 from agent import Agent
 from state import State
-from manhatten import Manhatten
-from euclidean import Euclidean
-from agent import Agent
-from state import State
 from heapq import heappush, heappop, nsmallest
 
 class AStar(Agent):
@@ -31,7 +27,6 @@ class AStar(Agent):
                     heappush(states_heap, child)
 
         return self.get_steps(end)
-
 
     def print_util(self, states):
         print(len(states))
