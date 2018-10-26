@@ -65,14 +65,3 @@ class Agent(ABC):
         """
         pass
 
-    def get_path(self, end_state):
-        if end_state is None:
-            return None
-        stack = []
-        stack.append(end_state.current)
-        while end_state.parent is not None:
-            stack.append(end_state.parent.current)
-            end_state = end_state.parent
-        return stack[::-1]
-
-

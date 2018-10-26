@@ -6,7 +6,7 @@ def print_steps(steps_sol):
     for s in steps_sol:
         print("================================")
         for i in range(0, 9, 3):
-            print(s.current[i:i + 3])
+            print(s[i:i + 3])
 
 
 agent = DFS()

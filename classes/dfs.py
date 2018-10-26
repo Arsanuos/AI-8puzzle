@@ -19,8 +19,8 @@ class DFS(Agent):
 
             neighbours = self.expand(state)
             for neighbour in neighbours:
-                if neighbour not in frontier:
-                    frontier.append(neighbour)
+                #if neighbour not in frontier:
+                frontier.append(neighbour)
 
         steps = self.get_steps(final_state)
         return steps
