@@ -36,13 +36,18 @@ export default class App extends Component{
     solve(){
         let sel = this.refs.algorithm;
         var opt = sel.options[sel.selectedIndex].value;
+
+        // disable the button until we return from the request
+        this.refs.solve_btn.setAttribute("disabled", "disabled");
+
         // Make a request for a user with a given ID
         let x = this
         axios.get('/solve', {
             params:{
                 algorithm:opt,
                 input:[x.state.input]
-            }
+            },
+            timeout: 5000
         })
         .then( (response) => {
             this.setState({
@@ -51,17 +56,26 @@ export default class App extends Component{
             })
             console.log(this.state.steps);
             this.render();
+            // enable the button after the response
+            this.refs.solve_btn.removeAttribute("disabled");
         })
-        .catch(function (error) {
+        .catch( (error) => {
+            if(error.code == 'ECONNABORTED'){
+                alert('Timeout as the Solution is very long, Try another initial puzzle or use another algorithm')
+            }
+            else{
+                alert("Try again");
+            }
             console.log(error.message)
-            alert("Try again");
+            // enable the button after the response
+            this.refs.solve_btn.removeAttribute("disabled");
         })
-        this.forceUpdate();
+
     }
 
     handleBlur(e){
         let rowNumber = Number(e.target.dataset.row);
-        let colNumber = Number(e.target.dataset.col); 
+        let colNumber = Number(e.target.dataset.col);
         //validate if not number.
         let val = Number(e.target.value);
         let tmpInput = this.state.input;
@@ -95,7 +109,9 @@ export default class App extends Component{
                                 <option value="A start (Euclidean)">A start (Euclidean)</option>
                             </select>
                             <div className="input-group-append">
-                                <button className="btn btn-primary" type="button" onClick={this.solve}>Find Path</button>
+                                <button ref="solve_btn" className="btn btn-primary" type="button" onClick={this.solve}>
+                                  Find Path
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -113,7 +129,7 @@ export default class App extends Component{
                     </div>
                 </div>
             </div>
-            
+
         );
     }
 
