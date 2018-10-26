@@ -14,8 +14,8 @@ class BFS(Agent):
                 break
             children = self.expand(curr_state)
             for child in children:
-                if child not in frontier:
-                    frontier.append(child)
+                #if child not in frontier:
+                frontier.append(child)
 
         steps = self.get_steps(curr_state)
         return steps

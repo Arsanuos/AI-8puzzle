@@ -5,6 +5,7 @@ from manhatten import Manhatten
 from euclidean import Euclidean
 from aStar import AStar
 import json
+
 app = Flask(__name__)
 
 
