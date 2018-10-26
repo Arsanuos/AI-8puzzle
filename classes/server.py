@@ -12,6 +12,7 @@ app = Flask(__name__)
 def solve():
     algorithm = request.args['algorithm']
     arr = list(map(int, request.args['input[]'][1:-1].split(',')))
+    print(algorithm)
     if algorithm == "BFS":
         bfs = BFS()
         output = bfs.search(arr)
