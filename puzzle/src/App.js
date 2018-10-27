@@ -47,14 +47,21 @@ export default class App extends Component{
         this.refs.solve_btn.setAttribute("disabled", "disabled");
 
         // Make a request for a user with a given ID
-	let checkArr = [0,0,0,0,0,0,0,0,0,0];
-	for(let i = 0 ; i < 10 ; i++){
-		checkArr[this.state.input[i]]++;
-		if(checkArr[this.state.input[i]] > 1){
-			alert('Error in cell (' + Math.floor(i/3) +', '+ i%3 + ') of the input array 2 cells with number '+ this.state.input[i]);
-			return;
-		}	
-	}
+      	let checkArr = [0,0,0,0,0,0,0,0,0,0];
+      	for(let i = 0 ; i < 9 ; i++){
+      		checkArr[this.state.input[i]]++;
+      		if(checkArr[this.state.input[i]] > 1){
+      			alert('Error in cell (' + Math.floor(i/3) +', '+ i%3 + ') of the input array 2 cells with number '+ this.state.input[i]);
+            this.refs.solve_btn.removeAttribute("disabled");
+      			return;
+      		}
+          if(this.state.input[i] < 0 || this.state.input[i] >= 9){
+      			alert('Invalid number ' + this.state.input[i] + ' in cell (' + Math.floor(i/3) +', '+ i%3 + ') of the input array');
+            this.refs.solve_btn.removeAttribute("disabled");
+            return;
+      		}
+      	}
+
         let x = this
         axios.get('/solve', {
             params:{
@@ -72,6 +79,9 @@ export default class App extends Component{
                 depth:response.data.search_depth,
                 runningTime:response.data.time
             })
+            if(this.state.depth == -1){
+              alert('This puzzle is unsolvable as it contains odd number of inversions, Try another initial puzzle')
+            }
             console.log(this.state.steps);
             // enable the button after the response
             this.refs.solve_btn.removeAttribute("disabled");
