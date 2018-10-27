@@ -8,6 +8,7 @@ class Agent(ABC):
     def __init__(self):
         # vis is set of states not arrays
         self.__vis = set()
+        self._optimize_flag = False
 
     def expand(self, current_state, heuristic=None):
         """
@@ -18,7 +19,6 @@ class Agent(ABC):
         """
 
         child_states = []
-
         current_arr = current_state.current
         empty_index = (current_arr.index(0) // 3, current_arr.index(0) % 3)
 
@@ -33,6 +33,8 @@ class Agent(ABC):
                 child_state = State(new_arr, current_state, heuristic)
                 if child_state not in self.vis:
                     child_states.append(child_state)
+                    if self._optimize_flag:
+                        self.vis.add(child_state)
 
         return child_states
 
@@ -64,4 +66,3 @@ class Agent(ABC):
         :return: list of state that describe the path.
         """
         pass
-

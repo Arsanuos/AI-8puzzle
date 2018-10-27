@@ -4,6 +4,10 @@ from state import State
 
 class BFS(Agent):
 
+    def __init__(self):
+        super().__init__()
+        self._optimize_flag = True
+
     def search(self, initial_state):
         curr_state = State(initial_state, None)
         frontier = [curr_state]
@@ -18,4 +22,9 @@ class BFS(Agent):
                 frontier.append(child)
 
         steps = self.get_steps(curr_state)
+        res = {}
+        res['steps'] = steps
+        res['cost'] = curr_state.cost
+        res['search_depth'] = curr_state.cost
+        res['nodes_expanded'] = len([node for node in self.vis if node not in frontier])
         return steps
