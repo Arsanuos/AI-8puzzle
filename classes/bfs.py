@@ -14,6 +14,7 @@ class BFS(Agent):
         while frontier:
             curr_state = frontier.pop(0)
             self.vis.add(curr_state)
+            self._explored += 1
             if curr_state.is_goal():
                 break
             children = self.expand(curr_state)
@@ -26,5 +27,5 @@ class BFS(Agent):
         res['steps'] = steps
         res['cost'] = curr_state.cost
         res['search_depth'] = curr_state.cost
-        res['nodes_expanded'] = len([node for node in self.vis if node not in frontier])
-        return steps
+        res['nodes_expanded'] = self._explored
+        return res

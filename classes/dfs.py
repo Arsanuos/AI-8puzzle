@@ -16,6 +16,7 @@ class DFS(Agent):
         while frontier:
             state = frontier.pop()
             self.vis.add(state)
+            self._explored += 1
             if state.is_goal():
                 final_state = state
                 break
@@ -28,5 +29,5 @@ class DFS(Agent):
         res['steps'] = steps
         res['cost'] = final_state.cost
         res['search_depth'] = final_state.cost
-        res['nodes_expanded'] = len([node for node in self.vis if node not in frontier])
+        res['nodes_expanded'] = self._explored
         return res
