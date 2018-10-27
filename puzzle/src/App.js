@@ -79,7 +79,7 @@ export default class App extends Component{
                 depth:response.data.search_depth,
                 runningTime:response.data.time
             })
-            if(this.state.depth == -1){
+            if(this.state.costOfPath === -1){
               alert('This puzzle is unsolvable as it contains odd number of inversions, Try another initial puzzle')
             }
             console.log(this.state.steps);

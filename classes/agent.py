@@ -59,7 +59,7 @@ class Agent(ABC):
         """
         return self.__vis
 
-    def check_solvable(initial_state):
+    def check_solvable(self, initial_state):
         """
             Check if the initial state is solvable or not by counting number of inversions.
         :param initial_state: the initial state to start from.
