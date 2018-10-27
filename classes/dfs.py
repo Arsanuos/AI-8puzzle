@@ -5,7 +5,7 @@ from state import State
 class DFS(Agent):
 
     def search(self, initial_state):
-
+        res = {}
         start = State(initial_state, None)
         frontier = [start]
         final_state = None
@@ -23,4 +23,8 @@ class DFS(Agent):
                 frontier.append(neighbour)
 
         steps = self.get_steps(final_state)
-        return steps
+        res['steps'] = steps
+        res['cost'] = final_state.cost
+        res['search_depth'] = final_state.cost
+        res['nodes_expanded'] = len(self.vis)
+        return res
