@@ -13,7 +13,6 @@ class AStar(Agent):
         states_heap = []
         heappush(states_heap, self.__initial_state)
         end = None
-        cnt = 0
         while len(states_heap):
             # break tie by FIFO criteria
             current_explored_state = heappop(states_heap)
@@ -22,7 +21,7 @@ class AStar(Agent):
                 break
 
             if current_explored_state not in self.vis:
-                cnt += 1
+                self._explored += 1
                 self.vis.add(current_explored_state)
                 child_states = self.expand(current_explored_state)
                 for child in child_states:
@@ -32,7 +31,7 @@ class AStar(Agent):
         res['steps'] = self.get_steps(end)
         res['cost'] = end.cost
         res['search_depth'] = end.cost
-        res['nodes_expanded'] = cnt
+        res['nodes_expanded'] = self._explored
         return res
 
     def print_util(self, states):
