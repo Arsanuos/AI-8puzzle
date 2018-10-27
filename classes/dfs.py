@@ -11,6 +11,10 @@ class DFS(Agent):
     def search(self, initial_state):
         res = {}
         start = State(initial_state, None)
+        if not check_solvable(start):
+            return { 'steps' : [[-1] * 8], 'cost' : -1,
+                    'searc_depth' : -1,'nodes_expanded' : -1}
+
         frontier = [start]
         final_state = None
         while frontier:

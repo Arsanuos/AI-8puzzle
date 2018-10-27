@@ -15,6 +15,10 @@ class AStar(Agent):
         :return: dictionary of steps, cost of path, search depth and number of nodes expanded.
         """
         self.__initial_state = State(initial_arr, None, self.__heuristic)
+        if not check_solvable(self.__initial_state):
+            return { 'steps' : [[-1] * 8], 'cost' : -1,
+                    'searc_depth' : -1,'nodes_expanded' : -1}
+
         states_heap = []
         heappush(states_heap, self.__initial_state)
         end = None

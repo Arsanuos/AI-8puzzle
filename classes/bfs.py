@@ -10,6 +10,10 @@ class BFS(Agent):
 
     def search(self, initial_state):
         curr_state = State(initial_state, None)
+        if not check_solvable(curr_state):
+            return { 'steps' : [[-1] * 8], 'cost' : -1,
+                    'searc_depth' : -1,'nodes_expanded' : -1}
+
         frontier = [curr_state]
         while frontier:
             curr_state = frontier.pop(0)

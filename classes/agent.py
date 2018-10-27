@@ -59,6 +59,21 @@ class Agent(ABC):
         """
         return self.__vis
 
+    def check_solvable(initial_state):
+        """
+            Check if the initial state is solvable or not by counting number of inversions.
+        :param initial_state: the initial state to start from.
+        :return: True if the puzzle solvable or False if it is unsolvable.
+        """
+        inversions = 0
+        for index1 in range(0,len(initial_state.current)):
+            for index2 in range(index1+1, len(initial_state.current)):
+                if (initial_state.current[index1] == 0) or (initial_state.current[index2] == 0):
+                    continue;
+                if initial_state.current[index1] > initial_state.current[index2]:
+                    inversions += 1
+        return inversions % 2 == 0
+
     @abstractmethod
     def search(self, initial_state):
         """
