@@ -47,6 +47,14 @@ export default class App extends Component{
         this.refs.solve_btn.setAttribute("disabled", "disabled");
 
         // Make a request for a user with a given ID
+	let checkArr = [0,0,0,0,0,0,0,0,0,0];
+	for(let i = 0 ; i < 10 ; i++){
+		checkArr[this.state.input[i]]++;
+		if(checkArr[this.state.input[i]] > 1){
+			alert('Error in cell (' + Math.floor(i/3) +', '+ i%3 + ') of the input array 2 cells with number '+ this.state.input[i]);
+			return;
+		}	
+	}
         let x = this
         axios.get('/solve', {
             params:{
@@ -111,8 +119,7 @@ export default class App extends Component{
                     <div className="col">
                         <div className="input-group">
                             <select ref="algorithm" className="custom-select" id="inputGroupSelect04">
-                                <option defaultValue>Select Algorithm</option>
-                                <option value="BFS">BFS</option>
+                                <option defaultValue value="BFS">BFS</option>
                                 <option value="DFS">DFS</option>
                                 <option value="A start (Manhatten)">A start (Manhatten)</option>
                                 <option value="A start (Euclidean)">A start (Euclidean)</option>

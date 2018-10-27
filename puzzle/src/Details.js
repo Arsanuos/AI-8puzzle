@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 export default class Details extends Component{
     render(){
         return(
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <tbody>
                     <tr>
                         <th scope="row">Cost of path</th>
