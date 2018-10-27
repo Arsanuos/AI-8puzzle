@@ -21,6 +21,26 @@ export default class App extends Component{
         this.prev = this.prev.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
         this.solve = this.solve.bind(this);
+        this.hasNext = this.hasNext.bind(this);
+        this.playAll = this.playAll.bind(this);
+        this.pause = this.pause.bind(this);
+    }
+
+    playAll(){
+        this.setState({
+            timer:setInterval(this.next, 500)
+        });
+    }
+
+    pause(){
+        clearInterval(this.state.timer);
+    }
+
+    hasNext(){
+        if(this.state.currentState < this.state.steps.length - 1){
+            return true;
+        }
+        return false;
     }
 
     next(){
@@ -28,7 +48,9 @@ export default class App extends Component{
             this.setState({
                 currentState: this.state.currentState + 1
             });
+            return
         }
+        this.pause();
     }
 
     prev(){
@@ -126,7 +148,7 @@ export default class App extends Component{
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-6">
                         <div className="input-group">
                             <select ref="algorithm" className="custom-select" id="inputGroupSelect04">
                                 <option defaultValue value="BFS">BFS</option>
@@ -141,7 +163,19 @@ export default class App extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col-3">
+                        <nav aria-label="Page navigation example pull-left">
+                            <ul className="pagination">
+                                <li className="page-item">
+                                    <a className="page-link" onClick={this.pause}>Pause</a>
+                                </li>
+                                <li className="page-item active">
+                                    <a className="page-link" onClick={this.playAll}>Run</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className="col-3">
                         <nav aria-label="Page navigation example">
                             <ul className="pagination justify-content-end">
                                 <li className="page-item">
@@ -152,6 +186,7 @@ export default class App extends Component{
                                 </li>
                             </ul>
                         </nav>
+                        <label>{this.state.currentState}</label>
                     </div>
                 </div>
                 <div className="row">

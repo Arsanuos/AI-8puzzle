@@ -20,15 +20,15 @@ export default class Board extends Component{
                     children.push(
                         <td key={j+(this.props.disabled ? 100 : 0)} className="cell">
                             <input key={i*3+(j+1)+ (this.props.disabled ? 100 : 0)} type="text"  data-row={i} data-col={j}  maxLength='1'
-                            disabled = {(this.props.disabled) ? "disabled" : ""}
-                            onKeyUp={this.props.handleBlur} value={this.props.data[3*i + j]}/>
+                                    disabled = {(this.props.disabled) ? "disabled" : ""}
+                                    onKeyUp={this.props.handleBlur} value={this.props.data[3*i + j]}/>
                         </td>)
                 }else{
                     children.push(
                         <td key={j+(this.props.disabled ? 100 : 0)} className="cell">
                             <input key={i*3+(j+1)+ (this.props.disabled ? 100 : 0)} type="text"  data-row={i} data-col={j}  maxLength='1'
                             disabled = {(this.props.disabled) ? "disabled" : ""}
-                            onKeyUp={this.props.handleBlur}/>
+                            onKeyUp={this.props.handleBlur} />
                         </td>)
                 }
           }
