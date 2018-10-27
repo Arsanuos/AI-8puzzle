@@ -9,6 +9,7 @@ class Agent(ABC):
         # vis is set of states not arrays
         self.__vis = set()
         self._optimize_flag = False
+        self._explored = 0
 
     def expand(self, current_state, heuristic=None):
         """
