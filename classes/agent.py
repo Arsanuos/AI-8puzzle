@@ -8,8 +8,9 @@ class Agent(ABC):
     def __init__(self):
         # vis is set of states not arrays
         self.__vis = set()
+        self._optimize_flag = False
 
-    def expand(self, current_state, optimize_flag, heuristic=None):
+    def expand(self, current_state, heuristic=None):
         """
             Get the child states of the current state.
         :param current_state: the current that we want to get its children, which is object of State class.
@@ -32,7 +33,7 @@ class Agent(ABC):
                 child_state = State(new_arr, current_state, heuristic)
                 if child_state not in self.vis:
                     child_states.append(child_state)
-                    if optimize_flag:
+                    if self._optimize_flag:
                         self.vis.add(child_state)
 
         return child_states

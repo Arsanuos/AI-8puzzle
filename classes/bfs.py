@@ -6,7 +6,7 @@ class BFS(Agent):
 
     def __init__(self):
         super().__init__()
-        self.__optimize_flag = True
+        self._optimize_flag = True
 
     def search(self, initial_state):
         curr_state = State(initial_state, None)
@@ -16,7 +16,7 @@ class BFS(Agent):
             self.vis.add(curr_state)
             if curr_state.is_goal():
                 break
-            children = self.expand(curr_state, self.__optimize_flag)
+            children = self.expand(curr_state)
             for child in children:
                 #if child not in frontier:
                 frontier.append(child)
@@ -26,5 +26,5 @@ class BFS(Agent):
         res['steps'] = steps
         res['cost'] = curr_state.cost
         res['search_depth'] = curr_state.cost
-        res['nodes_expanded'] = len([node for node in vis if node not in frontier])
+        res['nodes_expanded'] = len([node for node in self.vis if node not in frontier])
         return steps

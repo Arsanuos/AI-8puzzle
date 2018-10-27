@@ -6,7 +6,7 @@ class DFS(Agent):
 
     def __init__(self):
         super().__init__()
-        self.__optimize_flag = True
+        self._optimize_flag = True
 
     def search(self, initial_state):
         res = {}
@@ -19,7 +19,7 @@ class DFS(Agent):
             if state.is_goal():
                 final_state = state
                 break
-            neighbours = self.expand(state, self.__optimize_flag)
+            neighbours = self.expand(state)
             for neighbour in neighbours:
                 #if neighbour not in frontier:
                 frontier.append(neighbour)
@@ -28,5 +28,5 @@ class DFS(Agent):
         res['steps'] = steps
         res['cost'] = final_state.cost
         res['search_depth'] = final_state.cost
-        res['nodes_expanded'] = len([node for node in vis if node not in frontier])
+        res['nodes_expanded'] = len([node for node in self.vis if node not in frontier])
         return res
