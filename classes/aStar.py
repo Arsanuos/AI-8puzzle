@@ -9,6 +9,11 @@ class AStar(Agent):
         super().__init__()
 
     def search(self, initial_arr):
+        """
+
+        :param initial_arr: inital array of the board.
+        :return: dictionary of steps, cost of path, search depth and number of nodes expanded.
+        """
         self.__initial_state = State(initial_arr, None, self.__heuristic)
         states_heap = []
         heappush(states_heap, self.__initial_state)
@@ -33,11 +38,3 @@ class AStar(Agent):
         res['search_depth'] = end.cost
         res['nodes_expanded'] = self._explored
         return res
-
-    def print_util(self, states):
-        print(len(states))
-        print("================================")
-        for state in states:
-            for i in range(0, 9, 3):
-                print(state.current[i:i + 3])
-            print("================================")

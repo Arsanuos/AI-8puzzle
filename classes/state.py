@@ -66,4 +66,8 @@ class State:
         return self.current == [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
     def __lt__(self, other):
+        """
+        :param other: other state to be compared with
+        :return: True if current state has total cost less than the other. False otherwise.
+        """
         return self.get_total_cost() < other.get_total_cost()
