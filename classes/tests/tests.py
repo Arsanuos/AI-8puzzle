@@ -30,5 +30,6 @@ class TestAlgorithms(unittest.TestCase):
         print("Solved in {} steps".format(len(steps)))
         print(steps)
 
+
 if __name__ == '__main__':
     unittest.main()
