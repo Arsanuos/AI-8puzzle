@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board.js';
+import Details from './Details.js';
 const axios = require('axios');
 
 export default class App extends Component{
@@ -9,7 +10,11 @@ export default class App extends Component{
         this.state = {
             steps: [[0,0,0,0,0,0,0,0,0]],
             currentState: 0,
-            input:[0,0,0,0,0,0,0,0,0]
+            input:[0,0,0,0,0,0,0,0,0],
+            costOfPath:0,
+            expandedNodes:0,
+            depth:0,
+            runningTime:0
         }
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
@@ -47,15 +52,18 @@ export default class App extends Component{
                 algorithm:opt,
                 input:[x.state.input]
             },
-            timeout: 5000
+            timeout: 50000
         })
         .then( (response) => {
             this.setState({
                 steps:response.data.steps,
-                currentState:0
+                currentState:0,
+                costOfPath:response.data.cost,
+                expandedNodes:response.data.nodes_expanded,
+                depth:response.data.search_depth,
+                runningTime:response.data.time
             })
             console.log(this.state.steps);
-            this.render();
             // enable the button after the response
             this.refs.solve_btn.removeAttribute("disabled");
         })
@@ -126,6 +134,12 @@ export default class App extends Component{
                                 </li>
                             </ul>
                         </nav>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <Details costOfPath={this.state.costOfPath}
+                         expandedNodes={this.state.expandedNodes} depth={this.state.depth} runningTime={this.state.runningTime}/>
                     </div>
                 </div>
             </div>
