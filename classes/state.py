@@ -1,4 +1,3 @@
-
 class State:
     def __init__(self, current, parent, heuristic=None, move_cost=1):
         """
@@ -40,7 +39,10 @@ class State:
     @property
     def heuristic(self):
         return self.__heuristic
-        
+
+    def get_total_cost(self):
+        return self.cost + self.heuristic
+
     @parent.setter
     def parent(self, parent):
         self.__parent = parent
@@ -64,4 +66,4 @@ class State:
         return self.current == [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
     def __lt__(self, other):
-        return self.cost < other.cost
+        return self.get_total_cost() < other.get_total_cost()
