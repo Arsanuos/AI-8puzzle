@@ -6,8 +6,6 @@ from euclidean import Euclidean
 from aStar import AStar
 import json
 
-
-
 app = Flask(__name__)
 
 @app.route('/solve', methods=['GET'])
