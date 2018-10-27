@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Board from './Board.js';
 import Details from './Details.js';
+import './App.css';
 const axios = require('axios');
 
 export default class App extends Component{
