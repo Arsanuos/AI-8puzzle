@@ -22,6 +22,16 @@ npm start
 ```
 Then open [http://localhost:3000/](http://localhost:3000/) to see the app working in your default browser.<br>
 
+## Sample Runs
+![sample run 1](https://github.com/Arsanuos/AI-8puzzle/blob/master/img1.png)
+![sample run 2](https://github.com/Arsanuos/AI-8puzzle/blob/master/img2.png)
+![sample run 3](https://github.com/Arsanuos/AI-8puzzle/blob/master/img3.png)
+![sample run 4](https://github.com/Arsanuos/AI-8puzzle/blob/master/img4.png)
+![sample run 5](https://github.com/Arsanuos/AI-8puzzle/blob/master/img5.png)
+![sample run 6](https://github.com/Arsanuos/AI-8puzzle/blob/master/img6.png)
+![sample run 7](https://github.com/Arsanuos/AI-8puzzle/blob/master/img7.png)
+![sample run 8](https://github.com/Arsanuos/AI-8puzzle/blob/master/img8.png)
+
 ## Documentation
 For more details about used algorithms and samples see the simple [documentation](https://github.com/Arsanuos/AI-8puzzle/blob/master/report/AI%20Assignment1%20Report%20.pdf) 
 
