@@ -1,10 +1,7 @@
 <h1 align="center">
   React 8Puzzle Web App<br>
-  <p>
-    An Interactive Web App to play the 8 puzzle game. We solve the 8 puzzle game using different search algorithms including DFS, BFS and A* using different heuristics. We also handled the unsolved games to minimize the number of requests sent.
-  </p>
 </h1>
-
+An Interactive Web App to play the 8 puzzle game. We solve the 8 puzzle game using different search algorithms including DFS, BFS and A* using different heuristics. We also handled the unsolved games to minimize the number of requests sent.
 
 ## Built with
 
