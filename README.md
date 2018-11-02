@@ -22,6 +22,9 @@ npm start
 ```
 Then open [http://localhost:3000/](http://localhost:3000/) to see the app working in your default browser.<br>
 
+## Documentation
+For more details about used algorithms and samples see the simple [documentation](https://github.com/Arsanuos/AI-8puzzle/blob/master/report/AI%20Assignment1%20Report%20.pdf) 
+
 ## Authors
 * **Amr Hendy** [AmrHendy](https://github.com/AmrHendy)
 * **Arsanous Eissa** [Arsanous](https://github.com/Arsanuos)
